@@ -1,4 +1,6 @@
 import React, {Fragment, useState} from 'react';
+//Instalamos la siguiente libreria de ID (npm install uuid)
+import { v4 as uuidv4 } from 'uuid';
 
 const Form = () => {
     //Crear el State para citas
@@ -44,10 +46,13 @@ const Form = () => {
            actualizarError(true);
            return;
        }
+
+       //Eliminar el mensaje previo
+       actualizarError(false);
        
-
-
        //Asignar un ID
+       cita.id = uuidv4();
+       console.log(cita);
 
 
        //Crear la cita
