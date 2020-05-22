@@ -10,6 +10,9 @@ const Form = () => {
         sintomas: ''
     });
 
+    //El State para el error comienza con false, porque al principio no hay errores, podría ser null también.
+    const [error, actualizarError] = useState(false);
+
     //Función que se ejecuta cada vez que el usuario escribe en un input.
     const actualizarState = e => {
         //console.log(e.target.value);
@@ -26,10 +29,43 @@ const Form = () => {
     //Extraer los valores con destructuring pra no estar poniendo: cita.mascota, cita.propietario, etc..
     const {mascota, propietario, fecha, hora, sintomas} = cita;
 
+    //Función para cuando el usuario presiona agregar cita
+    const submitCita = e => {
+       e.preventDefault();
+       //console.log('enviando form')
+       console.log(mascota);
+
+       //Validar
+       //En la validación cuando hay un error, siempre hay que 
+       //colocar un 'return', para que no se continue ejecutando el código.
+       if(mascota.trim() === '' || propietario.trim() === '' || fecha.trim() === '' ||
+          hora.trim() === '' || sintomas.trim() === '') {
+           //console.log('Hay un error')
+           actualizarError(true);
+           return;
+       }
+       
+
+
+       //Asignar un ID
+
+
+       //Crear la cita
+
+
+
+       //Reiniciar el form
+    }
+
     return (  
         <Fragment>
             <h2>Crear Cita</h2>
-                <form>
+
+                {error ? <p className="alerta-error">Todos los campos son obligatorios</p> : null}
+
+                <form
+                    onSubmit={submitCita}
+                >
                     <label>Nombre Mascota</label>
                     <input 
                         type="text"
