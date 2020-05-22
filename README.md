@@ -58,7 +58,7 @@ _The technologies used to create the project have been the following:_
 
 _The project is from the Udemy course (https://www.udemy.com/course/react-de-principiante-a-experto-creando-mas-de-10-aplicaciones/)_
 
-* **Juan Pablo** - *Initial Work* (https://www.udemy.com/user/juanpablodelatorrevaldez/)
+* **Manuel Villar Vitoria** - Work done following the tutorial.
 
 
 ## Expressions of gratitude 🎁
