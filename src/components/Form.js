@@ -2,8 +2,9 @@ import React, {Fragment, useState} from 'react';
 //Instalamos la siguiente libreria de ID (npm install uuid)
 import { v4 as uuidv4 } from 'uuid';
 
-const Form = () => {
-    //Crear el State para citas
+
+    const Form = ({crearCita}) => {
+    //Crear el State para la cita
     const [cita, actualizarCita] = useState({
         mascota: '',
         propietario: '',
@@ -35,7 +36,7 @@ const Form = () => {
     const submitCita = e => {
        e.preventDefault();
        //console.log('enviando form')
-       console.log(mascota);
+       //console.log(mascota);
 
        //Validar
        //En la validación cuando hay un error, siempre hay que 
@@ -52,14 +53,19 @@ const Form = () => {
        
        //Asignar un ID
        cita.id = uuidv4();
-       console.log(cita);
-
+       //console.log(cita);
 
        //Crear la cita
-
-
+       crearCita(cita);
 
        //Reiniciar el form
+       actualizarCita({
+        mascota: '',
+        propietario: '',
+        fecha: '',
+        hora: '',
+        sintomas: ''
+       })
     }
 
     return (  
@@ -121,5 +127,4 @@ const Form = () => {
     );
 }
  
-export default Form
-;
+export default Form;

@@ -1,7 +1,20 @@
-import React, {Fragment} from 'react';
+import React, {Fragment, useState} from 'react';
 import Form from './components/Form';
 
 function App() {
+
+  //State de array de citas
+  const [citas, guardarCitas] = useState([]);
+
+  //Función que tome las citas actuales y agregue la nueva
+  const crearCita = cita => {
+    //console.log(cita);
+
+    //Se podría usar este código: citas.push(cita), pero no seguiriamos las buenas 
+   //prácticas, ya que en React siempre se utilizan funciones que modifiquen el State.
+    guardarCitas([...citas,cita]);
+  }
+
   return (
     <Fragment>
       <h1>Administrador de Pacientes</h1>
@@ -9,7 +22,9 @@ function App() {
       <div className="container">
         <div className="row">
           <div className="one-half column">
-            <Form />
+            <Form 
+              crearCita={crearCita}
+            />
           </div>
           <div className="one-half column">
             2
