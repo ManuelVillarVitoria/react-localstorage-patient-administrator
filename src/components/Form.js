@@ -11,9 +11,20 @@ const Form = () => {
     });
 
     //Función que se ejecuta cada vez que el usuario escribe en un input.
-    const actualizarState = () => {
-        console.log('escribiendo...');
+    const actualizarState = e => {
+        //console.log(e.target.value);
+        //Es necesario entrar en las propiedades de react mediante la función.
+        //No se puede hacer como en JS poner 'cita.mascota = e.target.value;'
+        actualizarCita({
+            // Usamos rest parameters o spread en el valor inicial del State, para que la 
+            //propiedad 'name' no se rescriba en los diferentes campos.
+            ...cita,
+            [e.target.name]: e.target.value
+        })
     }
+
+    //Extraer los valores con destructuring pra no estar poniendo: cita.mascota, cita.propietario, etc..
+    const {mascota, propietario, fecha, hora, sintomas} = cita;
 
     return (  
         <Fragment>
@@ -26,6 +37,7 @@ const Form = () => {
                         className="u-full-width"
                         placeholder="Nombre Mascota"
                         onChange={actualizarState}
+                        value={mascota}
                     />
                     <label>Nombre Dueño</label>
                     <input 
@@ -34,6 +46,7 @@ const Form = () => {
                         className="u-full-width"
                         placeholder="Nombre Dueño de la mascota"
                         onChange={actualizarState}
+                        value={propietario}
                     />
                     <label>Fecha</label>
                     <input 
@@ -41,6 +54,7 @@ const Form = () => {
                         name="fecha"
                         className="u-full-width"
                         onChange={actualizarState}
+                        value={fecha}
                     />
                     <label>Hora</label>
                     <input 
@@ -48,12 +62,14 @@ const Form = () => {
                         name="hora"
                         className="u-full-width"
                         onChange={actualizarState}
+                        value={hora}
                     />
                     <label>Síntomas</label>
                     <textarea
                         name="sintomas"
                         className="u-full-width"
                         onChange={actualizarState}
+                        value={sintomas}
                     ></textarea>
                     <button
                         type="submit"
