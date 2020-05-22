@@ -15,20 +15,17 @@ _5.-Adding in the LocalStorage._
 _6.-Documenting with PropTypes._
 
 
-<br />
+_- Have been used **Functional Components**, **Hooks useState & useEffect** and **PropTypes** in this project._
 
-_Have been used **Functional Components**, **Hooks useState & useEffect** and **PropTypes** in this project
-
-<br />
 
 ## Settings 🔧
 
-_Installating **Node.js** with NPM (https://nodejs.org/es/)._ <br />
+_Installating **Node.js** with NPM (https://nodejs.org/es/)._ 
 
 
 _- You must use this scripts to start the project:._
 
-* **npx create-react-app** project's name  _(To create the project's folder.)_ <br />
+* **npx create-react-app** project's name  _(To create the project's folder.)_ 
 
 
 _- You must use this scripts to run the project:._
@@ -41,14 +38,11 @@ _- You must use this scripts to run the project:._
 
 * **npm run build**  _(Bundles the app into static files for production.)_ <br />
 
-<br />
 
 _- It is recommended to use this extension to work with React:._
 
-https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?utm_source=chrome-ntp-icon <br />
-_(It allows you to inspect the React component hierarchies in the Chrome Developer Tools.)_
+https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?utm_source=chrome-ntp-icon _ - (It allows you to inspect the React component hierarchies in the Chrome Developer Tools.)_
 
-<br />
 
 ## Built with 🛠️
 
@@ -58,9 +52,7 @@ _The technologies used to create the project have been the following:_
 * ### `Skeleton`
 * ### `Google Fonts`
 * ### `Normalize CSS`
-* ### `HTML5`
-
-<br />
+* ### `HTML5/CCS3`
 
 ## Authors ✒️
 
