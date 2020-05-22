@@ -41,7 +41,7 @@ _- You must use this scripts to run the project:._
 
 _- It is recommended to use this extension to work with React:._
 
-https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?utm_source=chrome-ntp-icon _ - (It allows you to inspect the React component hierarchies in the Chrome Developer Tools.)_
+* https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?utm_source=chrome-ntp-icon _-  (It allows you to inspect the React component hierarchies in the Chrome Developer Tools.)_
 
 
 ## Built with 🛠️
