@@ -1,5 +1,6 @@
 import React, {Fragment, useState} from 'react';
 import Form from './components/Form';
+import Appointment from './components/Appointment';
 
 function App() {
 
@@ -18,7 +19,6 @@ function App() {
   return (
     <Fragment>
       <h1>Administrador de Pacientes</h1>
-
       <div className="container">
         <div className="row">
           <div className="one-half column">
@@ -27,13 +27,17 @@ function App() {
             />
           </div>
           <div className="one-half column">
-            2
+            <h2>Administra tus citas</h2>
+            {citas.map(cita => (
+              <Appointment
+                key={cita.id}
+                cita={cita}
+              />
+            ))}
           </div>
         </div>
       </div>
-
     </Fragment>
-       
   );
 }
 
