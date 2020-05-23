@@ -1,4 +1,4 @@
-import React, {Fragment, useState} from 'react';
+import React, {Fragment, useState, useEffect} from 'react';
 import Form from './components/Form';
 import Appointment from './components/Appointment';
 
@@ -6,6 +6,12 @@ function App() {
 
   //State de array de citas
   const [citas, guardarCitas] = useState([]);
+
+  // Hook useEffect para que esté pendiente,cuando el state de citas cambie, mediante el array de dependencias.
+  // Es como usar el componentDidMount y componentDidUpdate en una misma función.
+  useEffect(() => {
+    console.log('Documento listo o algo pasó con las citas');
+  }, [citas])
 
   //Función que tome las citas actuales y agregue la nueva
   const crearCita = cita => {
