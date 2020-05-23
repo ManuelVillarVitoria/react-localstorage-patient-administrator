@@ -18,6 +18,8 @@ function App() {
   // Es como usar el componentDidMount y componentDidUpdate en una misma función.
   //JSON.stringify convierte el array en un string.
   useEffect(() => {
+    let citasIniciales = JSON.parse(localStorage.getItem('citas'));
+    
     if(citasIniciales) {
       localStorage.setItem('citas',JSON.stringify(citas));
     } else {

@@ -1,6 +1,7 @@
 import React, {Fragment, useState} from 'react';
 //Instalamos la siguiente libreria de ID (npm install uuid)
 import { v4 as uuidv4 } from 'uuid';
+import PropTypes from 'prop-types';
 
 
     const Form = ({crearCita}) => {
@@ -125,6 +126,10 @@ import { v4 as uuidv4 } from 'uuid';
                 </form>
         </Fragment>
     );
+}
+
+Form.propTypes = {
+    crearCita: PropTypes.func.isRequired
 }
  
 export default Form;

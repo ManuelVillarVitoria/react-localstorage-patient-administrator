@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Appointment = ({cita, eliminarCita}) => (
     <div className="cita">
@@ -14,5 +15,11 @@ const Appointment = ({cita, eliminarCita}) => (
         >Eliminar &times;</button>
     </div>
   );
+
+//La propiedad 'key' no se documenta
+Appointment.propTypes = {
+    cita: PropTypes.object.isRequired,
+    eliminarCita: PropTypes.func.isRequired
+}
 
 export default Appointment;
