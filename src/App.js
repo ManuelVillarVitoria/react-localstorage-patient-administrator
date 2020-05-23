@@ -16,6 +16,16 @@ function App() {
     guardarCitas([...citas,cita]);
   }
 
+  //Función que elimina una cita por su ID
+  const eliminarCita = id => {
+    //console.log(id);
+    //Decimos que la cita sea diferente al id, porque cuando se filtren las citas queremos 
+    //nos retorne el resto y que la que se filtre se elimine.
+    const nuevasCitas = citas.filter(cita => cita.id !== id);
+    //Como filter nos crea un array nuevo, no hace falta pasar array: guardarCitas([nuevasCitas])
+    guardarCitas(nuevasCitas)
+  }
+
   return (
     <Fragment>
       <h1>Administrador de Pacientes</h1>
@@ -32,6 +42,7 @@ function App() {
               <Appointment
                 key={cita.id}
                 cita={cita}
+                eliminarCita={eliminarCita}
               />
             ))}
           </div>
