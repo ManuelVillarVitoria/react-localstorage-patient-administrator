@@ -4,14 +4,26 @@ import Appointment from './components/Appointment';
 
 function App() {
 
+  //Citas con LocalStorage
+  //Como LocalStorgae solo almacena strings, ponemos json.parse, para poner el array dentro de un string
+  let citasIniciales = JSON.parse(localStorage.getItem('citas'));
+  if(!citasIniciales) {
+    citasIniciales = [];
+  }
+
   //State de array de citas
-  const [citas, guardarCitas] = useState([]);
+  const [citas, guardarCitas] = useState(citasIniciales);
 
   // Hook useEffect para que esté pendiente,cuando el state de citas cambie, mediante el array de dependencias.
   // Es como usar el componentDidMount y componentDidUpdate en una misma función.
+  //JSON.stringify convierte el array en un string.
   useEffect(() => {
-    console.log('Documento listo o algo pasó con las citas');
-  }, [citas])
+    if(citasIniciales) {
+      localStorage.setItem('citas',JSON.stringify(citas));
+    } else {
+      localStorage.setItem('citas',JSON.stringify([]));
+    }
+  },[citas])
 
   //Función que tome las citas actuales y agregue la nueva
   const crearCita = cita => {
